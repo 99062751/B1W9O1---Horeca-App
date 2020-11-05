@@ -6,39 +6,78 @@
     <title>Horeca App</title>
 </head>
 <body>
-<h1>Café: 'DeCafé ta Ria'</h1>
-    <div>
-        <div class="rekeningd1">    
-            <p id="bedrag1"></p>
-            <p id="bedrag2"></p>
-            <p id="bedrag3"></p>
-            <p id="bedrag4"></p>
-        </div>
-        <div class="rekeningd2">
-            <p id="fris"></p>
-            <p id="bier"></p>
-            <p id="wijn"></p>
-            <p id="bitterballen1"></p>
-            <p id="bitterballen2"></p>
-            <p id="rekeningd1"></p>
-        </div>
-    </div>
+<h1>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Café: 'DeCafé ta Ria' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h1>
+    <h2>Hallo! En welkom bij DeCafé ta Ria!</h2>
+    <h3>Op deze site kunt u verschillende dingen bestellen dit zijn de keuzes.</h3>
+    <p>Drankjes:</p>
+    <ul>
+        <li>Fris 1€</li>
+        <li>Bier 3€</li>
+        <li>Wijn 2€</li>
 
-    <!-- prijs per product tekst --> 
-    <p id="pp1"></p>
-    <p id="pp2"></p>
-    <p id="pp3"></p>
-    <p id="pp4"></p>
-    <p id="pp5"></p>
+    </ul>
+    <p>Snacks:</p>
+    <ul>
+        <li>Bitterballen (8 stuks) 6€</li>
+        <li>Bitterballen (16 stuks) 10€</li>
+        <li>Kroket 4€ | Binnenkort beschikbaar!</li>
 
-    <button onclick="bestellen()">BESTELLEN</button>
-    <button onclick="new_rekening()">NEW</button>
+    </ul>
+    <button id="button" onclick="bestellen()">BESTELLEN</button>
+    <button id="button2" onclick="new_rekening()">NEW</button>
+
     
     <style>
-        button{
+        button{ 
             background-color: cyan;
+            border: 3px solid blue;
+            margin-right: 15px;
         }
-    </style>
+        .rekeningd1, .rekeningd2{
+            display: inline-block;
+        }
 
+        h1{
+            text-align: center;
+            border: 5px solid black;
+            border-radius: 20px;
+            color: black;
+            
+        }
+
+        ul, h2, h3, p, #button{
+            margin-left: 600px;
+
+        }
+        body{
+            background-color: beige;
+            text-align: left;
+        }
+ </style>
+<div>
+    <div class="rekeningd1">    
+        <p id="bedrag1"></p>
+        <p id="bedrag2"></p>
+        <p id="bedrag3"></p>
+        <p id="bedrag4"></p>
+        <p id="bedrag5"></p>
+        <p id="totaal"></p>
+    </div>
+    <div class="rekeningd2">
+        <p id="fris"></p>
+        <p id="bier"></p>
+        <p id="wijn"></p>
+        <p id="bitterballen1"></p>
+        <p id="bitterballen2"></p>
+        <p id="totaal_bedrag"></p>
+    </div>
+</div>
+
+<!-- prijs per product tekst --> 
+<p id="pp1"></p>
+<p id="pp2"></p>
+<p id="pp3"></p>
+<p id="pp4"></p>
+<p id="pp5"></p>
 </body>
 </html>
