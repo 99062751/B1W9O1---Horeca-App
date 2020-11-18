@@ -99,6 +99,7 @@ function bestellen(){
 
             }else if (Order1 == 16) {   //als er bij de bitterballenschaal 16 word ingevuld voer dit uit.
                 tijdelijke_opslag5 = parseInt(prompt("Hoeveel bitterbalschalen van 16 stuks wilt u bestellen?"));
+
                 if(!(isNaN(tijdelijke_opslag5))){
                     if (tijdelijke_opslag5 >= 0) {
                         aantal_bitterballen2 = aantal_bitterballen2 + tijdelijke_opslag5; 
@@ -131,10 +132,10 @@ function rekening(){
     wijn_cost = price_wijn * aantal_wijn;   //totale kosten wijn is prijs keer het aantal
     bitterballen_cost1 = price_bitterballen1 * aantal_bitterballen1;    //totale kosten bitterballen 8 is prijs keer het aantal
     bitterballen_cost2 = price_bitterballen2 * aantal_bitterballen2;    //totale kosten bitterballen 16 is prijs keer het aantal
-    
+
     totale_rekening = fris_cost + bier_cost + wijn_cost + bitterballen_cost1 + bitterballen_cost2;  //totale kosten van alles bij elkaar opgeteld
 
-    if (totale_rekening != null && totale_rekening != 0) {  //als de totale rekening niet nul is voer dit uit
+    if (totale_rekening !== null && totale_rekening !== 0) {  //als de totale rekening niet nul is voer dit uit
         document.getElementById("totaal").innerHTML =
         "Totaal: ";
         
@@ -148,7 +149,7 @@ function rekening(){
         ""; 
     }
 
-    if (fris_cost != null && fris_cost != 0) {          //als de totale rekening niet nul is voer dit uit
+    if (fris_cost !== null && fris_cost !== 0) {          //als de totale rekening niet nul is voer dit uit
         document.getElementById("bedrag1").innerHTML =
         aantal_fris + "x Fris (" + price_fris + ") ";   //Zet dit op de site, prijs product en aantal x product
     
@@ -162,7 +163,7 @@ function rekening(){
         ""; 
     }
 
-    if (bier_cost != null && bier_cost != 0) {         
+    if (bier_cost !== null && bier_cost !== 0) {         
         document.getElementById("bedrag2").innerHTML =
         aantal_bier + "x Bier (" + price_bier + ") "; 
     
@@ -176,7 +177,7 @@ function rekening(){
         ""; 
     }
 
-    if (wijn_cost != null && wijn_cost != 0) {
+    if (wijn_cost !== null && wijn_cost !== 0) {
         document.getElementById("bedrag3").innerHTML =
         aantal_wijn + "x Wijn (" + price_wijn + ") "; 
     
@@ -190,7 +191,7 @@ function rekening(){
         ""; 
     }
 
-    if (bitterballen_cost1 != null && bitterballen_cost1 != 0) {    
+    if (bitterballen_cost1 !== null && bitterballen_cost1 !== 0) {    
         document.getElementById("bedrag4").innerHTML =
         aantal_bitterballen1 + "x Bitterballen (8 stuks) (" + price_bitterballen1 + ") "; 
     
@@ -204,19 +205,21 @@ function rekening(){
         ""; 
     }
 
-    if (bitterballen_cost2 != null && bitterballen_cost2 != 0) {
+    if (bitterballen_cost2 !== null && bitterballen_cost2 !== 0) {
         document.getElementById("bedrag5").innerHTML =
-        aantal_bitterballen2 + "x Bitterballen (16 stuks) (" + price_bitterballen2 + ") "; 
-        
+        aantal_bitterballen2 + "x Bitterballen (16 stuks)" + price_bitterballen2 + ") ";
+
         document.getElementById("bitterballen2").innerHTML =
-        "€" + bitterballen_cost2; 
-    } else {
+        "€" + bitterballen_cost2;
+        
+    }else{
         document.getElementById("bedrag5").innerHTML =
         "";
-        
-        document.getElementById("bitterballen2").innerHTML =
-        ""; 
+        document.getElementById().innerHTML =
+        "";
     }
+
+    
 }
 
 
@@ -230,8 +233,21 @@ function new_rekening(){
     fris_cost = 0;  //totale kosten product 
     bier_cost = 0;
     wijn_cost = 0;
+    totale_rekening= 0;
 
-    document.getElementById("bedrag1").innerHTML =  //deze en de andere onder deze code resetten alles terug
+
+    document.getElementById("totaal").innerHTML =   //deze en de andere onder deze code resetten alles terug
+    "";
+    
+    document.getElementById("totaal_bedrag").innerHTML =
+    ""; 
+    document.getElementById("totaal").innerHTML =
+    "";
+    
+    document.getElementById("totaal_bedrag").innerHTML =
+    ""; 
+
+    document.getElementById("bedrag1").innerHTML =  
     "";
     
     document.getElementById("fris").innerHTML =     
@@ -266,4 +282,7 @@ function new_rekening(){
         
     document.getElementById("bitterballen2").innerHTML =
     ""; 
+
+    document.getElementById("bedrag5").innerHTML =
+    "";
 }
